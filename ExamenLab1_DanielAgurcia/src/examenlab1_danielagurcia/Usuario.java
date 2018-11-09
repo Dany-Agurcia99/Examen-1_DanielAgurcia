@@ -13,6 +13,7 @@ public class Usuario {
     String correo_electronico;
     String genero_fav;
     ArrayList<Libro> libros_genero_fav = new ArrayList();
+    ArrayList<Usuario> lista_amigos = new ArrayList();
 
     public Usuario() {
     }
@@ -27,6 +28,14 @@ public class Usuario {
         this.genero_fav = genero_fav;
     }
 
+    public ArrayList<Usuario> getLista_amigos() {
+        return lista_amigos;
+    }
+
+    public void setLista_amigos(ArrayList<Usuario> lista_amigos) {
+        this.lista_amigos = lista_amigos;
+    }
+    
     public String getNombre() {
         return nombre;
     }
