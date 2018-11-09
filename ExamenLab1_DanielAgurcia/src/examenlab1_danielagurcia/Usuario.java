@@ -35,7 +35,7 @@ public class Usuario {
     public void setLista_amigos(ArrayList<Usuario> lista_amigos) {
         this.lista_amigos = lista_amigos;
     }
-    
+
     public String getNombre() {
         return nombre;
     }
@@ -102,7 +102,7 @@ public class Usuario {
 
     @Override
     public String toString() {
-        return "Usuario{" + "nombre=" + nombre + ", username=" + username + ", password=" + password + ", fecha_nacimiento=" + fecha_nacimiento + ", numero_telefonico=" + numero_telefonico + ", correo_electronico=" + correo_electronico + ", genero_fav=" + genero_fav + ", libros_genero_fav=" + libros_genero_fav + '}';
+        return nombre;
     }
 
 }

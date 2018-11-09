@@ -6,6 +6,9 @@
 package examenlab1_danielagurcia;
 
 import java.util.ArrayList;
+import java.util.Date;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -135,6 +138,16 @@ public class Biblioteca_Virtual extends javax.swing.JFrame {
 
         jb_log_in.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
         jb_log_in.setText("Log In");
+        jb_log_in.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_log_inMouseClicked(evt);
+            }
+        });
+        jb_log_in.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_log_inActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout ventana_log_inLayout = new javax.swing.GroupLayout(ventana_log_in.getContentPane());
         ventana_log_in.getContentPane().setLayout(ventana_log_inLayout);
@@ -204,6 +217,11 @@ public class Biblioteca_Virtual extends javax.swing.JFrame {
 
         jb_sign_up.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
         jb_sign_up.setText("Sign up");
+        jb_sign_up.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_sign_upMouseClicked(evt);
+            }
+        });
         jb_sign_up.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jb_sign_upActionPerformed(evt);
@@ -800,9 +818,54 @@ public class Biblioteca_Virtual extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jb_sign_upActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    private void jb_log_inActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_log_inActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jb_log_inActionPerformed
+
+    private void jb_log_inMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_log_inMouseClicked
+        String user = tf_username.getText();
+        String pass = tf_password.getText();
+        boolean log = false;
+        for (Usuario temp : lista_usuarios) {
+            if (temp.getUsername().equals(user) && temp.getPassword().equals(pass)) {
+                log = true;
+                usuario_ingresado = temp;
+            }
+        }
+        if (log == true) {
+            Menu_usuario.setModal(true);
+            Menu_usuario.pack();
+            Menu_usuario.setLocationRelativeTo(this);
+            Menu_usuario.setVisible(true);
+        } else {
+            JOptionPane.showMessageDialog(this, "Usuario o Contrasena Incorrecto");
+        }
+    }//GEN-LAST:event_jb_log_inMouseClicked
+
+    private void jb_sign_upMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_sign_upMouseClicked
+        String nombre = tf_nombre.getText();
+        String user = tf_username_sign.getText();
+        String pass = tf_password_sign.getText();
+        Date fecha = jd_fecha_nacimiento.getDate();
+        int numero_telefonico = Integer.parseInt(tf_numeroTel.getText());
+        String correo = tf_correo.getText();
+        String genero = cb_genero.getSelectedItem().toString();
+        Usuario nuevoUsuario = new Usuario(nombre, user, pass, fecha, numero_telefonico, correo, genero);
+        lista_usuarios.add(nuevoUsuario);
+        DefaultComboBoxModel modelo = (DefaultComboBoxModel) cb_lista_usuarios_amigos.getModel();
+        modelo.addElement(nuevoUsuario);
+        cb_lista_usuarios_amigos.setModel(modelo);
+        tf_nombre.setText("");
+        tf_username.setText("");
+        tf_password.setText("");
+        jd_fecha_nacimiento.setDate(new Date());
+        tf_numeroTel.setText("");
+        tf_correo.setText("");
+        cb_genero.setSelectedItem(false);
+        JOptionPane.showMessageDialog(this, "Usuario Registrado Correctamente");
+        ventana_sign_in.dispose();
+    }//GEN-LAST:event_jb_sign_upMouseClicked
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -834,8 +897,10 @@ public class Biblioteca_Virtual extends javax.swing.JFrame {
             }
         });
     }
+    //////////////////////////////////////////////////////////
     ArrayList<Libro> lista_libros_Principal = new ArrayList();
     ArrayList<Usuario> lista_usuarios = new ArrayList();
+    Usuario usuario_ingresado;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDialog Menu_admin;
     private javax.swing.JDialog Menu_usuario;
