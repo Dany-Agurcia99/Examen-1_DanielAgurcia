@@ -316,6 +316,11 @@ public class Biblioteca_Virtual extends javax.swing.JFrame {
         );
 
         jb_admin_log.setText("Log In");
+        jb_admin_log.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_admin_logMouseClicked(evt);
+            }
+        });
 
         jLabel12.setText("Usuario del Administrador");
 
@@ -865,6 +870,18 @@ public class Biblioteca_Virtual extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, "Usuario Registrado Correctamente");
         ventana_sign_in.dispose();
     }//GEN-LAST:event_jb_sign_upMouseClicked
+
+    private void jb_admin_logMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_admin_logMouseClicked
+        String user = tf_username.getText();
+        String pass = tf_password.getText();
+        boolean log = false;
+        if (user.equals("papiagurcia") && pass.equals("12345")) {
+            log = true;
+            JOptionPane.showMessageDialog(this, "Bienvenido Admin PapiAgurcia");
+        } else {
+            JOptionPane.showMessageDialog(this, "Usuario o contrasenia Incorrecta, Porfavor revise el archivo de texto enviado");
+        }
+    }//GEN-LAST:event_jb_admin_logMouseClicked
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
