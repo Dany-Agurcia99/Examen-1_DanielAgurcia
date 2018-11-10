@@ -1240,11 +1240,13 @@ public class Biblioteca_Virtual extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanel4MouseClicked
 
     private void jPanel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseClicked
-        DefaultComboBoxModel modelo2 = (DefaultComboBoxModel) cb_devolver_libros.getModel();
+
         for (Libro temp : usuario_ingresado.getLibros_usuario()) {
+            DefaultComboBoxModel modelo2 = (DefaultComboBoxModel) cb_devolver_libros.getModel();
             modelo2.addElement(temp);
+            cb_devolver_libros.setModel(modelo2);
         }
-        cb_devolver_libros.setModel(modelo2);
+
     }//GEN-LAST:event_jPanel2MouseClicked
 
     private void jb_modificar_LibrosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_modificar_LibrosMouseClicked
