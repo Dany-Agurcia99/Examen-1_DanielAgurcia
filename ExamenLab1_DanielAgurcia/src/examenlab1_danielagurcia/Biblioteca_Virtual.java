@@ -87,8 +87,6 @@ public class Biblioteca_Virtual extends javax.swing.JFrame {
         cb_lista_solicitudes = new javax.swing.JComboBox<>();
         jb_rechazar_solicitud = new javax.swing.JButton();
         jb_aceptar_solicitud = new javax.swing.JButton();
-        jPanel8 = new javax.swing.JPanel();
-        jComboBox1 = new javax.swing.JComboBox<>();
         Menu_admin = new javax.swing.JDialog();
         jTabbedPane2 = new javax.swing.JTabbedPane();
         jPanel9 = new javax.swing.JPanel();
@@ -120,6 +118,8 @@ public class Biblioteca_Virtual extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         table_libros_eliminar = new javax.swing.JTable();
         jb_eliminar_libros = new javax.swing.JButton();
+        jPanel5 = new javax.swing.JPanel();
+        cb_historial = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
@@ -594,27 +594,6 @@ public class Biblioteca_Virtual extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Solicitudes de Amistad", jPanel12);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
-        jPanel8.setLayout(jPanel8Layout);
-        jPanel8Layout.setHorizontalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(37, Short.MAX_VALUE))
-        );
-        jPanel8Layout.setVerticalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGap(53, 53, 53)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(233, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab("Historial", jPanel8);
-
         Menu_usuario.getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 0, 470, -1));
 
         jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -787,6 +766,27 @@ public class Biblioteca_Virtual extends javax.swing.JFrame {
 
         jTabbedPane2.addTab("Eliminar Libros", jPanel11);
 
+        cb_historial.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(127, 127, 127)
+                .addComponent(cb_historial, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(150, Short.MAX_VALUE))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(70, 70, 70)
+                .addComponent(cb_historial, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(211, Short.MAX_VALUE))
+        );
+
+        jTabbedPane2.addTab("Historial", jPanel5);
+
         javax.swing.GroupLayout Menu_adminLayout = new javax.swing.GroupLayout(Menu_admin.getContentPane());
         Menu_admin.getContentPane().setLayout(Menu_adminLayout);
         Menu_adminLayout.setHorizontalGroup(
@@ -887,15 +887,15 @@ public class Biblioteca_Virtual extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3MouseClicked
 
     private void tf_usernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_usernameActionPerformed
-       
+
     }//GEN-LAST:event_tf_usernameActionPerformed
 
     private void jb_sign_upActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_sign_upActionPerformed
-        
+
     }//GEN-LAST:event_jb_sign_upActionPerformed
 
     private void jb_log_inActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_log_inActionPerformed
-        
+
     }//GEN-LAST:event_jb_log_inActionPerformed
 
     private void jb_log_inMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_log_inMouseClicked
@@ -988,12 +988,18 @@ public class Biblioteca_Virtual extends javax.swing.JFrame {
         tf_nombreAutor.setText("");
         jd_publicacion.setDate(new Date());
         JOptionPane.showMessageDialog(this, "Libro Registrado Correctamente");
+        DefaultComboBoxModel modelo5 = (DefaultComboBoxModel) cb_historial.getModel();
+        modelo5.addElement("Se agrego un libro en la lista de libros principal");
+        cb_historial.setModel(modelo5);
     }//GEN-LAST:event_jb_agregar_libroMouseClicked
 
     private void jb_recibir_informacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_recibir_informacionMouseClicked
         ta_descripcion.setText("");
         Libro seleccion = (Libro) cb_lista_libros_disp_info.getSelectedItem();
         ta_descripcion.setText(seleccion.toString2());
+        DefaultComboBoxModel modelo = (DefaultComboBoxModel) cb_historial.getModel();
+        modelo.addElement("Se Recibio la informacion de un libro");
+        cb_historial.setModel(modelo);
     }//GEN-LAST:event_jb_recibir_informacionMouseClicked
 
     private void jb_devolver_libroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_devolver_libroMouseClicked
@@ -1011,6 +1017,9 @@ public class Biblioteca_Virtual extends javax.swing.JFrame {
             cb_lista_libros_genFav.setModel(modelo3);
         }
         JOptionPane.showMessageDialog(this, "Libro eliminado exitosamente");
+        DefaultComboBoxModel modelo = (DefaultComboBoxModel) cb_historial.getModel();
+        modelo.addElement("Un usuario devolvio un libro");
+        cb_historial.setModel(modelo);
     }//GEN-LAST:event_jb_devolver_libroMouseClicked
 
     private void jb_agregar_libro_usuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_agregar_libro_usuarioMouseClicked
@@ -1028,6 +1037,9 @@ public class Biblioteca_Virtual extends javax.swing.JFrame {
             cb_lista_libros_genFav.setModel(modelo3);
         }
         JOptionPane.showMessageDialog(this, "Libro agregado exitosamente");
+        DefaultComboBoxModel modelo = (DefaultComboBoxModel) cb_historial.getModel();
+        modelo.addElement("Un usuario agrego un libro");
+        cb_historial.setModel(modelo);
     }//GEN-LAST:event_jb_agregar_libro_usuarioMouseClicked
 
     private void jb_aceptar_solicitudMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_aceptar_solicitudMouseClicked
@@ -1043,6 +1055,9 @@ public class Biblioteca_Virtual extends javax.swing.JFrame {
 //        modelo3.addElement(seleccion);
 //        cb_lista_amigos.setModel(modelo3);
         JOptionPane.showMessageDialog(this, "Solicitud de amistad acepatada correctamente");
+        DefaultComboBoxModel modelo = (DefaultComboBoxModel) cb_historial.getModel();
+        modelo.addElement("Un usuario acepto una solicitud de amistad");
+        cb_historial.setModel(modelo);
     }//GEN-LAST:event_jb_aceptar_solicitudMouseClicked
 
     private void jb_rechazar_solicitudMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_rechazar_solicitudMouseClicked
@@ -1051,12 +1066,18 @@ public class Biblioteca_Virtual extends javax.swing.JFrame {
         modelo.removeElement(seleccion);
         cb_lista_solicitudes.setModel(modelo);
         JOptionPane.showMessageDialog(this, "Solicitud de amistad rechazada correctamente");
+        DefaultComboBoxModel modelo2 = (DefaultComboBoxModel) cb_historial.getModel();
+        modelo2.addElement("Un usuario rechazo una solicitud de amistad");
+        cb_historial.setModel(modelo2);
     }//GEN-LAST:event_jb_rechazar_solicitudMouseClicked
 
     private void jb_enviar_solicitudMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_enviar_solicitudMouseClicked
         Usuario seleccion = (Usuario) cb_lista_usuarios_amigos.getSelectedItem();
         seleccion.getLista_solicitudes().add(usuario_ingresado);
         JOptionPane.showMessageDialog(this, "Solicitud de amistad enviada correctamente");
+        DefaultComboBoxModel modelo = (DefaultComboBoxModel) cb_historial.getModel();
+        modelo.addElement("Un usuario envio una solicitud de amistad");
+        cb_historial.setModel(modelo);
     }//GEN-LAST:event_jb_enviar_solicitudMouseClicked
 
     private void jPanel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel6MouseClicked
@@ -1078,17 +1099,16 @@ public class Biblioteca_Virtual extends javax.swing.JFrame {
             amigo_seleccionado.getLibros_usuario().add(libro_prestado);
             usuario_ingresado.getLibros_usuario().remove(libro_prestado);
             JOptionPane.showMessageDialog(this, "Libro Prestado exitosamente");
+            DefaultComboBoxModel modelo = (DefaultComboBoxModel) cb_historial.getModel();
+            modelo.addElement("Un usuario presto un libro");
+            cb_historial.setModel(modelo);
         } else {
             JOptionPane.showMessageDialog(this, "Seleccione un amigo y un Libro");
         }
+
     }//GEN-LAST:event_jb_prestar_libroMouseClicked
 
     private void jTabbedPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane1MouseClicked
-        DefaultComboBoxModel modelo = (DefaultComboBoxModel) cb_lista_amigos.getModel();
-        for (Usuario temp : usuario_ingresado.getLista_amigos()) {
-            modelo.addElement(temp);
-        }
-        cb_lista_amigos.setModel(modelo);
     }//GEN-LAST:event_jTabbedPane1MouseClicked
 
     private void jPanel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel12MouseClicked
@@ -1156,6 +1176,7 @@ public class Biblioteca_Virtual extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cb_devolver_libros;
     private javax.swing.JComboBox<String> cb_genero;
     private javax.swing.JComboBox<String> cb_genero_libros;
+    private javax.swing.JComboBox<String> cb_historial;
     private javax.swing.JComboBox<String> cb_libros_disponibles;
     private javax.swing.JComboBox<String> cb_libros_usuario_prestar;
     private javax.swing.JComboBox<String> cb_lista_amigos;
@@ -1166,7 +1187,6 @@ public class Biblioteca_Virtual extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1195,9 +1215,9 @@ public class Biblioteca_Virtual extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
