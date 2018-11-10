@@ -480,9 +480,19 @@ public class Biblioteca_Virtual extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Informacion de los Libros", jPanel3);
 
+        jPanel6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel6MouseClicked(evt);
+            }
+        });
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jb_enviar_solicitud.setText("Enviar Solicitud");
+        jb_enviar_solicitud.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_enviar_solicitudMouseClicked(evt);
+            }
+        });
         jPanel6.add(jb_enviar_solicitud, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 130, 150, 70));
 
         cb_lista_usuarios_amigos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -997,6 +1007,20 @@ public class Biblioteca_Virtual extends javax.swing.JFrame {
         cb_lista_solicitudes.setModel(modelo);
         JOptionPane.showMessageDialog(this, "Solicitud de amistad rechazada correctamente");
     }//GEN-LAST:event_jb_rechazar_solicitudMouseClicked
+
+    private void jb_enviar_solicitudMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_enviar_solicitudMouseClicked
+        Usuario seleccion = (Usuario) cb_lista_usuarios_amigos.getSelectedItem();
+        seleccion.getLista_solicitudes().add(usuario_ingresado);
+        JOptionPane.showMessageDialog(this, "Solicitud de amistad enviada correctamente");
+    }//GEN-LAST:event_jb_enviar_solicitudMouseClicked
+
+    private void jPanel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel6MouseClicked
+        DefaultComboBoxModel modelo = (DefaultComboBoxModel) cb_lista_solicitudes.getModel();
+        for (Usuario temp : usuario_ingresado.getLista_solicitudes()) {
+            modelo.addElement(temp);
+        }
+        cb_lista_solicitudes.setModel(modelo);
+    }//GEN-LAST:event_jPanel6MouseClicked
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

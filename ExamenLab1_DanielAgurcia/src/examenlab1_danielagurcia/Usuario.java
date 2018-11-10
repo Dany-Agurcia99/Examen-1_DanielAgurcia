@@ -14,6 +14,7 @@ public class Usuario {
     String genero_fav;
     ArrayList<Libro> libros_usuario = new ArrayList();
     ArrayList<Usuario> lista_amigos = new ArrayList();
+    ArrayList<Usuario> lista_solicitudes = new ArrayList();
 
     public Usuario() {
     }
@@ -28,6 +29,14 @@ public class Usuario {
         this.genero_fav = genero_fav;
     }
 
+    public ArrayList<Usuario> getLista_solicitudes() {
+        return lista_solicitudes;
+    }
+
+    public void setLista_solicitudes(ArrayList<Usuario> lista_solicitudes) {
+        this.lista_solicitudes = lista_solicitudes;
+    }
+    
     public ArrayList<Usuario> getLista_amigos() {
         return lista_amigos;
     }
