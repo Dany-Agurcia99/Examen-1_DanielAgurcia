@@ -111,15 +111,26 @@ public class Biblioteca_Virtual extends javax.swing.JFrame {
         tf_nombreAutor = new javax.swing.JTextField();
         jb_agregar_libro = new javax.swing.JButton();
         jPanel10 = new javax.swing.JPanel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        table_libros_modificar = new javax.swing.JTable();
         jb_modificar_Libros = new javax.swing.JButton();
+        cb_modificar = new javax.swing.JComboBox<>();
         jPanel11 = new javax.swing.JPanel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        table_libros_eliminar = new javax.swing.JTable();
         jb_eliminar_libros = new javax.swing.JButton();
+        cb_eliminar = new javax.swing.JComboBox<>();
         jPanel5 = new javax.swing.JPanel();
         cb_historial = new javax.swing.JComboBox<>();
+        Ventana_Modificar = new javax.swing.JDialog();
+        rb_titulo = new javax.swing.JRadioButton();
+        rb_desc = new javax.swing.JRadioButton();
+        rb_puntaje = new javax.swing.JRadioButton();
+        rb_copias = new javax.swing.JRadioButton();
+        rb_genero = new javax.swing.JRadioButton();
+        rb_valor = new javax.swing.JRadioButton();
+        rb_edicion = new javax.swing.JRadioButton();
+        rb_autor = new javax.swing.JRadioButton();
+        rb_public = new javax.swing.JRadioButton();
+        jLabel22 = new javax.swing.JLabel();
+        jb_modi_ele = new javax.swing.JButton();
+        bg_modificar = new javax.swing.ButtonGroup();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
@@ -380,8 +391,6 @@ public class Biblioteca_Virtual extends javax.swing.JFrame {
             }
         });
 
-        cb_libros_disponibles.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -394,7 +403,7 @@ public class Biblioteca_Virtual extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(160, 160, 160)
                         .addComponent(jb_agregar_libro_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(89, Short.MAX_VALUE))
+                .addContainerGap(107, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -402,7 +411,7 @@ public class Biblioteca_Virtual extends javax.swing.JFrame {
                 .addGap(45, 45, 45)
                 .addComponent(cb_libros_disponibles, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36)
-                .addComponent(jb_agregar_libro_usuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jb_agregar_libro_usuario, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
                 .addGap(135, 135, 135))
         );
 
@@ -422,8 +431,6 @@ public class Biblioteca_Virtual extends javax.swing.JFrame {
             }
         });
 
-        cb_devolver_libros.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -436,7 +443,7 @@ public class Biblioteca_Virtual extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(162, 162, 162)
                         .addComponent(jb_devolver_libro, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(79, Short.MAX_VALUE))
+                .addContainerGap(97, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -445,12 +452,10 @@ public class Biblioteca_Virtual extends javax.swing.JFrame {
                 .addComponent(cb_devolver_libros, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jb_devolver_libro, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(127, Short.MAX_VALUE))
+                .addContainerGap(128, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Devolver Libros", jPanel2);
-
-        cb_lista_libros_disp_info.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jb_recibir_informacion.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
         jb_recibir_informacion.setText("Recibir Informacion");
@@ -470,10 +475,10 @@ public class Biblioteca_Virtual extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(cb_lista_libros_disp_info, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jb_recibir_informacion, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE))
+                    .addComponent(jb_recibir_informacion, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE)
+                    .addComponent(cb_lista_libros_disp_info, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -485,7 +490,7 @@ public class Biblioteca_Virtual extends javax.swing.JFrame {
                         .addComponent(cb_lista_libros_disp_info, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(70, 70, 70)
                         .addComponent(jb_recibir_informacion)
-                        .addContainerGap(144, Short.MAX_VALUE))
+                        .addContainerGap(145, Short.MAX_VALUE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jScrollPane4)
                         .addGap(19, 19, 19))))
@@ -508,7 +513,6 @@ public class Biblioteca_Virtual extends javax.swing.JFrame {
         });
         jPanel6.add(jb_enviar_solicitud, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 130, 150, 70));
 
-        cb_lista_usuarios_amigos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jPanel6.add(cb_lista_usuarios_amigos, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 220, 60));
 
         jTabbedPane1.addTab("Agregar Amigos", jPanel6);
@@ -520,10 +524,8 @@ public class Biblioteca_Virtual extends javax.swing.JFrame {
         });
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        cb_libros_usuario_prestar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jPanel4.add(cb_libros_usuario_prestar, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 50, 160, 50));
 
-        cb_lista_amigos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jPanel4.add(cb_lista_amigos, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 170, 50));
 
         jb_prestar_libro.setText("Prestar Libro");
@@ -536,8 +538,6 @@ public class Biblioteca_Virtual extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Prestar Libros", jPanel4);
 
-        cb_lista_libros_genFav.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
@@ -545,14 +545,14 @@ public class Biblioteca_Virtual extends javax.swing.JFrame {
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addGap(127, 127, 127)
                 .addComponent(cb_lista_libros_genFav, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(107, Short.MAX_VALUE))
+                .addContainerGap(125, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addGap(71, 71, 71)
                 .addComponent(cb_lista_libros_genFav, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(178, Short.MAX_VALUE))
+                .addContainerGap(179, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Lista de Libros", jPanel7);
@@ -564,7 +564,6 @@ public class Biblioteca_Virtual extends javax.swing.JFrame {
         });
         jPanel12.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        cb_lista_solicitudes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jPanel12.add(cb_lista_solicitudes, new org.netbeans.lib.awtextra.AbsoluteConstraints(132, 30, 186, 51));
 
         jb_rechazar_solicitud.setBackground(new java.awt.Color(204, 0, 51));
@@ -666,102 +665,64 @@ public class Biblioteca_Virtual extends javax.swing.JFrame {
 
         jTabbedPane2.addTab("Agregar Libros", jPanel9);
 
-        table_libros_modificar.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane2.setViewportView(table_libros_modificar);
-        if (table_libros_modificar.getColumnModel().getColumnCount() > 0) {
-            table_libros_modificar.getColumnModel().getColumn(0).setResizable(false);
-            table_libros_modificar.getColumnModel().getColumn(1).setResizable(false);
-            table_libros_modificar.getColumnModel().getColumn(2).setResizable(false);
-            table_libros_modificar.getColumnModel().getColumn(3).setResizable(false);
-        }
-
         jb_modificar_Libros.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
         jb_modificar_Libros.setText("Modificar");
+        jb_modificar_Libros.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_modificar_LibrosMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
         jPanel10Layout.setHorizontalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel10Layout.createSequentialGroup()
-                .addGap(48, 48, 48)
+                .addGap(23, 23, 23)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jb_modificar_Libros, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 456, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(81, Short.MAX_VALUE))
+                    .addComponent(cb_modificar, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jb_modificar_Libros, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(396, Short.MAX_VALUE))
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel10Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(cb_modificar, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jb_modificar_Libros, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(172, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Modificar Libros", jPanel10);
 
-        table_libros_eliminar.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, true, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane3.setViewportView(table_libros_eliminar);
-        if (table_libros_eliminar.getColumnModel().getColumnCount() > 0) {
-            table_libros_eliminar.getColumnModel().getColumn(0).setResizable(false);
-            table_libros_eliminar.getColumnModel().getColumn(1).setResizable(false);
-            table_libros_eliminar.getColumnModel().getColumn(2).setResizable(false);
-            table_libros_eliminar.getColumnModel().getColumn(3).setResizable(false);
-        }
-
         jb_eliminar_libros.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
         jb_eliminar_libros.setText("Eliminar");
+        jb_eliminar_libros.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_eliminar_librosMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
         jPanel11Layout.setHorizontalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel11Layout.createSequentialGroup()
-                .addGap(48, 48, 48)
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jb_eliminar_libros, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 456, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(81, Short.MAX_VALUE))
+                .addGap(38, 38, 38)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(cb_eliminar, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jb_eliminar_libros, javax.swing.GroupLayout.DEFAULT_SIZE, 138, Short.MAX_VALUE))
+                .addContainerGap(409, Short.MAX_VALUE))
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel11Layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jb_eliminar_libros, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addGap(34, 34, 34)
+                .addComponent(cb_eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jb_eliminar_libros, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(134, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Eliminar Libros", jPanel11);
@@ -796,6 +757,102 @@ public class Biblioteca_Virtual extends javax.swing.JFrame {
         Menu_adminLayout.setVerticalGroup(
             Menu_adminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jTabbedPane2)
+        );
+
+        bg_modificar.add(rb_titulo);
+        rb_titulo.setText("Titulo");
+
+        bg_modificar.add(rb_desc);
+        rb_desc.setText("Descripion");
+
+        bg_modificar.add(rb_puntaje);
+        rb_puntaje.setText("Puntaje");
+
+        bg_modificar.add(rb_copias);
+        rb_copias.setText("Copias disponibles");
+
+        bg_modificar.add(rb_genero);
+        rb_genero.setText("Genero");
+
+        bg_modificar.add(rb_valor);
+        rb_valor.setText("Valor");
+
+        bg_modificar.add(rb_edicion);
+        rb_edicion.setText("Edicion");
+
+        bg_modificar.add(rb_autor);
+        rb_autor.setText("Autor");
+        rb_autor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rb_autorActionPerformed(evt);
+            }
+        });
+
+        bg_modificar.add(rb_public);
+        rb_public.setText("Anio de Publicacion");
+        rb_public.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rb_publicActionPerformed(evt);
+            }
+        });
+
+        jLabel22.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        jLabel22.setText("Seleccione lo que quiere modificar");
+
+        jb_modi_ele.setText("Modificar Elemento");
+
+        javax.swing.GroupLayout Ventana_ModificarLayout = new javax.swing.GroupLayout(Ventana_Modificar.getContentPane());
+        Ventana_Modificar.getContentPane().setLayout(Ventana_ModificarLayout);
+        Ventana_ModificarLayout.setHorizontalGroup(
+            Ventana_ModificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Ventana_ModificarLayout.createSequentialGroup()
+                .addGroup(Ventana_ModificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Ventana_ModificarLayout.createSequentialGroup()
+                        .addGap(36, 36, 36)
+                        .addComponent(jLabel22))
+                    .addGroup(Ventana_ModificarLayout.createSequentialGroup()
+                        .addGap(103, 103, 103)
+                        .addGroup(Ventana_ModificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(rb_public)
+                            .addComponent(rb_autor)
+                            .addComponent(rb_edicion)
+                            .addComponent(rb_valor)
+                            .addComponent(rb_genero)
+                            .addComponent(rb_copias)
+                            .addComponent(rb_puntaje)
+                            .addComponent(rb_desc)
+                            .addComponent(rb_titulo)))
+                    .addGroup(Ventana_ModificarLayout.createSequentialGroup()
+                        .addGap(59, 59, 59)
+                        .addComponent(jb_modi_ele, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(21, Short.MAX_VALUE))
+        );
+        Ventana_ModificarLayout.setVerticalGroup(
+            Ventana_ModificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Ventana_ModificarLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jLabel22)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(rb_titulo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(rb_desc)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(rb_puntaje)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(rb_copias)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(rb_genero)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(rb_valor)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(rb_edicion)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(rb_autor)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(rb_public)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jb_modi_ele, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -899,152 +956,187 @@ public class Biblioteca_Virtual extends javax.swing.JFrame {
     }//GEN-LAST:event_jb_log_inActionPerformed
 
     private void jb_log_inMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_log_inMouseClicked
-        String user = tf_username.getText();
-        String pass = tf_password.getText();
-        boolean log = false;
-        for (Usuario temp : lista_usuarios) {
-            if (temp.getUsername().equals(user) && temp.getPassword().equals(pass)) {
-                log = true;
-                usuario_ingresado = temp;
+        try {
+            String user = tf_username.getText();
+            String pass = tf_password.getText();
+            boolean log = false;
+            for (Usuario temp : lista_usuarios) {
+                if (temp.getUsername().equals(user) && temp.getPassword().equals(pass)) {
+                    log = true;
+                    usuario_ingresado = temp;
+                }
             }
-        }
-        if (log == true) {
-            ventana_log_in.dispose();
-            Menu_usuario.setModal(true);
-            Menu_usuario.pack();
-            Menu_usuario.setLocationRelativeTo(this);
-            Menu_usuario.setVisible(true);
-        } else {
-            JOptionPane.showMessageDialog(this, "Usuario o Contrasena Incorrecto");
+            if (log == true) {
+                ventana_log_in.dispose();
+                Menu_usuario.setModal(true);
+                Menu_usuario.pack();
+                Menu_usuario.setLocationRelativeTo(this);
+                Menu_usuario.setVisible(true);
+            } else {
+                JOptionPane.showMessageDialog(this, "Usuario o Contrasena Incorrecto");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Ocurrio un erro y no se ingresaron los datos");
         }
     }//GEN-LAST:event_jb_log_inMouseClicked
 
     private void jb_sign_upMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_sign_upMouseClicked
-        String nombre = tf_nombre.getText();
-        String user = tf_username_sign.getText();
-        String pass = tf_password_sign.getText();
-        Date fecha = jd_fecha_nacimiento.getDate();
-        int numero_telefonico = Integer.parseInt(tf_numeroTel.getText());
-        String correo = tf_correo.getText();
-        String genero = cb_genero.getSelectedItem().toString();
-        Usuario nuevoUsuario = new Usuario(nombre, user, pass, fecha, numero_telefonico, correo, genero);
-        lista_usuarios.add(nuevoUsuario);
-        DefaultComboBoxModel modelo = (DefaultComboBoxModel) cb_lista_usuarios_amigos.getModel();
-        modelo.addElement(nuevoUsuario);
-        cb_lista_usuarios_amigos.setModel(modelo);
-        tf_nombre.setText("");
-        tf_username.setText("");
-        tf_password.setText("");
-        jd_fecha_nacimiento.setDate(new Date());
-        tf_numeroTel.setText("");
-        tf_correo.setText("");
-        cb_genero.setSelectedItem(false);
-        JOptionPane.showMessageDialog(this, "Usuario Registrado Correctamente");
-        ventana_sign_in.dispose();
+        try {
+            String nombre = tf_nombre.getText();
+            String user = tf_username_sign.getText();
+            String pass = tf_password_sign.getText();
+            Date fecha = jd_fecha_nacimiento.getDate();
+            int numero_telefonico = Integer.parseInt(tf_numeroTel.getText());
+            String correo = tf_correo.getText();
+            String genero = cb_genero.getSelectedItem().toString();
+            Usuario nuevoUsuario = new Usuario(nombre, user, pass, fecha, numero_telefonico, correo, genero);
+            lista_usuarios.add(nuevoUsuario);
+            DefaultComboBoxModel modelo = (DefaultComboBoxModel) cb_lista_usuarios_amigos.getModel();
+            modelo.addElement(nuevoUsuario);
+            cb_lista_usuarios_amigos.setModel(modelo);
+            tf_nombre.setText("");
+            tf_username.setText("");
+            tf_password.setText("");
+            jd_fecha_nacimiento.setDate(new Date());
+            tf_numeroTel.setText("");
+            tf_correo.setText("");
+            cb_genero.setSelectedItem(false);
+            JOptionPane.showMessageDialog(this, "Usuario Registrado Correctamente");
+            ventana_sign_in.dispose();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Ocurrio un erro y no se ingresaron los datos");
+        }
     }//GEN-LAST:event_jb_sign_upMouseClicked
 
     private void jb_admin_logMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_admin_logMouseClicked
-        String user = tf_username_admin.getText();
-        String pass = tf_password_admin.getText();
-        boolean log = false;
-        if (user.equals("papiagurcia") && pass.equals("12345")) {
-            log = true;
-            ventana_log_in_admin.dispose();
-            JOptionPane.showMessageDialog(this, "Bienvenido Admin PapiAgurcia");
-            Menu_admin.setModal(true);
-            Menu_admin.pack();
-            Menu_admin.setLocationRelativeTo(this);
-            Menu_admin.setVisible(true);
-        } else {
-            JOptionPane.showMessageDialog(this, "Usuario o contrasenia Incorrecta, Porfavor revise el archivo de texto enviado");
+        try {
+            String user = tf_username_admin.getText();
+            String pass = tf_password_admin.getText();
+            boolean log = false;
+            if (user.equals("papiagurcia") && pass.equals("12345")) {
+                log = true;
+                ventana_log_in_admin.dispose();
+                JOptionPane.showMessageDialog(this, "Bienvenido Admin PapiAgurcia");
+                Menu_admin.setModal(true);
+                Menu_admin.pack();
+                Menu_admin.setLocationRelativeTo(this);
+                Menu_admin.setVisible(true);
+            } else {
+                JOptionPane.showMessageDialog(this, "Usuario o contrasenia Incorrecta, Porfavor revise el archivo de texto enviado");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Ocurrio un erro y no se ingresaron los datos");
         }
     }//GEN-LAST:event_jb_admin_logMouseClicked
 
     private void jb_agregar_libroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_agregar_libroMouseClicked
-        String titulo = tf_titulo.getText();
-        String Descripcion = ta_descripcion.getText();
-        int puntaje = (Integer) sp_puntaje.getValue();
-        int copias = (Integer) sp_copias.getValue();
-        String genero = cb_genero_libros.getSelectedItem().toString();
-        double valor = Double.parseDouble(tf_valor.getText());
-        int edicion = Integer.parseInt(tf_edicion.getText());
-        String autor = tf_nombreAutor.getText();
-        Date fecha_publi = jd_publicacion.getDate();
-        Libro nuevoLibro = new Libro(titulo, Descripcion, puntaje, copias, genero, ERROR, edicion, autor, fecha_publi);
-        lista_libros_Principal.add(nuevoLibro);
-        DefaultComboBoxModel modelo = (DefaultComboBoxModel) cb_libros_disponibles.getModel();
-        modelo.addElement(nuevoLibro);
-        cb_libros_disponibles.setModel(modelo);
-        DefaultComboBoxModel modelo2 = (DefaultComboBoxModel) cb_lista_libros_disp_info.getModel();
-        modelo2.addElement(nuevoLibro);
-        cb_lista_libros_disp_info.setModel(modelo2);
-        tf_titulo.setText("");
-        ta_descripcion.setText("");
-        sp_puntaje.setValue(1);
-        sp_copias.setValue(0);
-        cb_genero_libros.setSelectedItem(false);
-        tf_valor.setText("");
-        tf_edicion.setText("");
-        tf_nombreAutor.setText("");
-        jd_publicacion.setDate(new Date());
-        JOptionPane.showMessageDialog(this, "Libro Registrado Correctamente");
-        DefaultComboBoxModel modelo5 = (DefaultComboBoxModel) cb_historial.getModel();
-        modelo5.addElement("Se agrego un libro en la lista de libros principal");
-        cb_historial.setModel(modelo5);
+        try {
+            String titulo = tf_titulo.getText();
+            String Descripcion = ta_descripcion.getText();
+            int puntaje = (Integer) sp_puntaje.getValue();
+            int copias = (Integer) sp_copias.getValue();
+            String genero = cb_genero_libros.getSelectedItem().toString();
+            double valor = Double.parseDouble(tf_valor.getText());
+            int edicion = Integer.parseInt(tf_edicion.getText());
+            String autor = tf_nombreAutor.getText();
+            Date fecha_publi = jd_publicacion.getDate();
+            Libro nuevoLibro = new Libro(titulo, Descripcion, puntaje, copias, genero, ERROR, edicion, autor, fecha_publi);
+            lista_libros_Principal.add(nuevoLibro);
+            DefaultComboBoxModel modelo = (DefaultComboBoxModel) cb_libros_disponibles.getModel();
+            modelo.addElement(nuevoLibro);
+            cb_libros_disponibles.setModel(modelo);
+            DefaultComboBoxModel modelo2 = (DefaultComboBoxModel) cb_lista_libros_disp_info.getModel();
+            modelo2.addElement(nuevoLibro);
+            cb_lista_libros_disp_info.setModel(modelo2);
+            DefaultComboBoxModel modelo4 = (DefaultComboBoxModel) cb_modificar.getModel();
+            modelo4.addElement(nuevoLibro);
+            cb_modificar.setModel(modelo4);
+            DefaultComboBoxModel modelo5 = (DefaultComboBoxModel) cb_eliminar.getModel();
+            modelo5.addElement(nuevoLibro);
+            cb_eliminar.setModel(modelo5);
+            tf_titulo.setText("");
+            ta_descripcion.setText("");
+            sp_puntaje.setValue(1);
+            sp_copias.setValue(0);
+            cb_genero_libros.setSelectedItem(false);
+            tf_valor.setText("");
+            tf_edicion.setText("");
+            tf_nombreAutor.setText("");
+            jd_publicacion.setDate(new Date());
+            JOptionPane.showMessageDialog(this, "Libro Registrado Correctamente");
+            DefaultComboBoxModel modelo6 = (DefaultComboBoxModel) cb_historial.getModel();
+            modelo6.addElement("Se agrego un libro en la lista de libros principal");
+            cb_historial.setModel(modelo6);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Ocurrio un erro y no se ingresaron los datos");
+        }
     }//GEN-LAST:event_jb_agregar_libroMouseClicked
 
     private void jb_recibir_informacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_recibir_informacionMouseClicked
-        ta_descripcion.setText("");
-        Libro seleccion = (Libro) cb_lista_libros_disp_info.getSelectedItem();
-        ta_descripcion.setText(seleccion.toString2());
-        DefaultComboBoxModel modelo = (DefaultComboBoxModel) cb_historial.getModel();
-        modelo.addElement("Se Recibio la informacion de un libro");
-        cb_historial.setModel(modelo);
+        try {
+            ta_descripcion.setText("");
+            Libro seleccion = (Libro) cb_lista_libros_disp_info.getSelectedItem();
+            ta_descripcion.setText(seleccion.toString2());
+            DefaultComboBoxModel modelo = (DefaultComboBoxModel) cb_historial.getModel();
+            modelo.addElement("Se Recibio la informacion de un libro");
+            cb_historial.setModel(modelo);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Ocurrio un erro y no se ingresaron los datos");
+        }
     }//GEN-LAST:event_jb_recibir_informacionMouseClicked
 
     private void jb_devolver_libroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_devolver_libroMouseClicked
-        Libro seleccion = (Libro) cb_devolver_libros.getSelectedItem();
-        usuario_ingresado.getLibros_usuario().remove(seleccion);
+        try {
+            Libro seleccion = (Libro) cb_devolver_libros.getSelectedItem();
+            usuario_ingresado.getLibros_usuario().remove(seleccion);
 //        DefaultComboBoxModel modelo = (DefaultComboBoxModel) cb_libros_usuario_prestar.getModel();
 //        modelo.removeElement(seleccion);
 //        cb_libros_usuario_prestar.setModel(modelo);
 //        DefaultComboBoxModel modelo2 = (DefaultComboBoxModel) cb_devolver_libros.getModel();
 //        modelo2.removeElement(seleccion);
 //        cb_devolver_libros.setModel(modelo2);
-        if (usuario_ingresado.getGenero_fav().equals(seleccion.getGenero())) {
-            DefaultComboBoxModel modelo3 = (DefaultComboBoxModel) cb_lista_libros_genFav.getModel();
-            modelo3.removeElement(seleccion);
-            cb_lista_libros_genFav.setModel(modelo3);
+            if (usuario_ingresado.getGenero_fav().equals(seleccion.getGenero())) {
+                DefaultComboBoxModel modelo3 = (DefaultComboBoxModel) cb_lista_libros_genFav.getModel();
+                modelo3.removeElement(seleccion);
+                cb_lista_libros_genFav.setModel(modelo3);
+            }
+            JOptionPane.showMessageDialog(this, "Libro eliminado exitosamente");
+            DefaultComboBoxModel modelo = (DefaultComboBoxModel) cb_historial.getModel();
+            modelo.addElement("Un usuario devolvio un libro");
+            cb_historial.setModel(modelo);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Ocurrio un erro y no se ingresaron los datos");
         }
-        JOptionPane.showMessageDialog(this, "Libro eliminado exitosamente");
-        DefaultComboBoxModel modelo = (DefaultComboBoxModel) cb_historial.getModel();
-        modelo.addElement("Un usuario devolvio un libro");
-        cb_historial.setModel(modelo);
     }//GEN-LAST:event_jb_devolver_libroMouseClicked
 
     private void jb_agregar_libro_usuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_agregar_libro_usuarioMouseClicked
-        Libro seleccion = (Libro) cb_libros_disponibles.getSelectedItem();
-        usuario_ingresado.getLibros_usuario().add(seleccion);
+        try {
+            Libro seleccion = (Libro) cb_libros_disponibles.getSelectedItem();
+            usuario_ingresado.getLibros_usuario().add(seleccion);
 //        DefaultComboBoxModel modelo = (DefaultComboBoxModel) cb_libros_usuario_prestar.getModel();
 //        modelo.addElement(seleccion);
 //        cb_libros_usuario_prestar.setModel(modelo);
 //        DefaultComboBoxModel modelo2 = (DefaultComboBoxModel) cb_devolver_libros.getModel();
 //        modelo2.addElement(seleccion);
 //        cb_devolver_libros.setModel(modelo2);
-        if (usuario_ingresado.getGenero_fav().equals(seleccion.getGenero())) {
-            DefaultComboBoxModel modelo3 = (DefaultComboBoxModel) cb_lista_libros_genFav.getModel();
-            modelo3.addElement(seleccion);
-            cb_lista_libros_genFav.setModel(modelo3);
+            if (usuario_ingresado.getGenero_fav().equals(seleccion.getGenero())) {
+                DefaultComboBoxModel modelo3 = (DefaultComboBoxModel) cb_lista_libros_genFav.getModel();
+                modelo3.addElement(seleccion);
+                cb_lista_libros_genFav.setModel(modelo3);
+            }
+            JOptionPane.showMessageDialog(this, "Libro agregado exitosamente");
+            DefaultComboBoxModel modelo = (DefaultComboBoxModel) cb_historial.getModel();
+            modelo.addElement("Un usuario agrego un libro");
+            cb_historial.setModel(modelo);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Ocurrio un erro y no se ingresaron los datos");
         }
-        JOptionPane.showMessageDialog(this, "Libro agregado exitosamente");
-        DefaultComboBoxModel modelo = (DefaultComboBoxModel) cb_historial.getModel();
-        modelo.addElement("Un usuario agrego un libro");
-        cb_historial.setModel(modelo);
     }//GEN-LAST:event_jb_agregar_libro_usuarioMouseClicked
 
     private void jb_aceptar_solicitudMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_aceptar_solicitudMouseClicked
-        Usuario seleccion = (Usuario) cb_lista_solicitudes.getSelectedItem();
-        usuario_ingresado.getLista_amigos().add(seleccion);
+        try {
+            Usuario seleccion = (Usuario) cb_lista_solicitudes.getSelectedItem();
+            usuario_ingresado.getLista_amigos().add(seleccion);
 //        DefaultComboBoxModel modelo = (DefaultComboBoxModel) cb_lista_amigos.getModel();
 //        modelo.addElement(seleccion);
 //        cb_lista_amigos.setModel(modelo);
@@ -1054,30 +1146,41 @@ public class Biblioteca_Virtual extends javax.swing.JFrame {
 //        DefaultComboBoxModel modelo3 = (DefaultComboBoxModel) cb_lista_amigos.getModel();
 //        modelo3.addElement(seleccion);
 //        cb_lista_amigos.setModel(modelo3);
-        JOptionPane.showMessageDialog(this, "Solicitud de amistad acepatada correctamente");
-        DefaultComboBoxModel modelo = (DefaultComboBoxModel) cb_historial.getModel();
-        modelo.addElement("Un usuario acepto una solicitud de amistad");
-        cb_historial.setModel(modelo);
+            JOptionPane.showMessageDialog(this, "Solicitud de amistad acepatada correctamente");
+            DefaultComboBoxModel modelo = (DefaultComboBoxModel) cb_historial.getModel();
+            modelo.addElement("Un usuario acepto una solicitud de amistad");
+            cb_historial.setModel(modelo);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Ocurrio un erro y no se ingresaron los datos");
+        }
     }//GEN-LAST:event_jb_aceptar_solicitudMouseClicked
 
     private void jb_rechazar_solicitudMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_rechazar_solicitudMouseClicked
-        Usuario seleccion = (Usuario) cb_lista_solicitudes.getSelectedItem();
-        DefaultComboBoxModel modelo = (DefaultComboBoxModel) cb_lista_solicitudes.getModel();
-        modelo.removeElement(seleccion);
-        cb_lista_solicitudes.setModel(modelo);
-        JOptionPane.showMessageDialog(this, "Solicitud de amistad rechazada correctamente");
-        DefaultComboBoxModel modelo2 = (DefaultComboBoxModel) cb_historial.getModel();
-        modelo2.addElement("Un usuario rechazo una solicitud de amistad");
-        cb_historial.setModel(modelo2);
+        try {
+            Usuario seleccion = (Usuario) cb_lista_solicitudes.getSelectedItem();
+            DefaultComboBoxModel modelo = (DefaultComboBoxModel) cb_lista_solicitudes.getModel();
+            modelo.removeElement(seleccion);
+            cb_lista_solicitudes.setModel(modelo);
+            JOptionPane.showMessageDialog(this, "Solicitud de amistad rechazada correctamente");
+            DefaultComboBoxModel modelo2 = (DefaultComboBoxModel) cb_historial.getModel();
+            modelo2.addElement("Un usuario rechazo una solicitud de amistad");
+            cb_historial.setModel(modelo2);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Ocurrio un erro y no se ingresaron los datos");
+        }
     }//GEN-LAST:event_jb_rechazar_solicitudMouseClicked
 
     private void jb_enviar_solicitudMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_enviar_solicitudMouseClicked
-        Usuario seleccion = (Usuario) cb_lista_usuarios_amigos.getSelectedItem();
-        seleccion.getLista_solicitudes().add(usuario_ingresado);
-        JOptionPane.showMessageDialog(this, "Solicitud de amistad enviada correctamente");
-        DefaultComboBoxModel modelo = (DefaultComboBoxModel) cb_historial.getModel();
-        modelo.addElement("Un usuario envio una solicitud de amistad");
-        cb_historial.setModel(modelo);
+        try {
+            Usuario seleccion = (Usuario) cb_lista_usuarios_amigos.getSelectedItem();
+            seleccion.getLista_solicitudes().add(usuario_ingresado);
+            JOptionPane.showMessageDialog(this, "Solicitud de amistad enviada correctamente");
+            DefaultComboBoxModel modelo = (DefaultComboBoxModel) cb_historial.getModel();
+            modelo.addElement("Un usuario envio una solicitud de amistad");
+            cb_historial.setModel(modelo);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Ocurrio un erro y no se ingresaron los datos");
+        }
     }//GEN-LAST:event_jb_enviar_solicitudMouseClicked
 
     private void jPanel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel6MouseClicked
@@ -1093,17 +1196,21 @@ public class Biblioteca_Virtual extends javax.swing.JFrame {
     }//GEN-LAST:event_jb_aceptar_solicitudActionPerformed
 
     private void jb_prestar_libroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_prestar_libroMouseClicked
-        Usuario amigo_seleccionado = (Usuario) cb_lista_amigos.getSelectedItem();
-        Libro libro_prestado = (Libro) cb_libros_usuario_prestar.getSelectedItem();
-        if (amigo_seleccionado != null && libro_prestado != null) {
-            amigo_seleccionado.getLibros_usuario().add(libro_prestado);
-            usuario_ingresado.getLibros_usuario().remove(libro_prestado);
-            JOptionPane.showMessageDialog(this, "Libro Prestado exitosamente");
-            DefaultComboBoxModel modelo = (DefaultComboBoxModel) cb_historial.getModel();
-            modelo.addElement("Un usuario presto un libro");
-            cb_historial.setModel(modelo);
-        } else {
-            JOptionPane.showMessageDialog(this, "Seleccione un amigo y un Libro");
+        try {
+            Usuario amigo_seleccionado = (Usuario) cb_lista_amigos.getSelectedItem();
+            Libro libro_prestado = (Libro) cb_libros_usuario_prestar.getSelectedItem();
+            if (amigo_seleccionado != null && libro_prestado != null) {
+                amigo_seleccionado.getLibros_usuario().add(libro_prestado);
+                usuario_ingresado.getLibros_usuario().remove(libro_prestado);
+                JOptionPane.showMessageDialog(this, "Libro Prestado exitosamente");
+                DefaultComboBoxModel modelo = (DefaultComboBoxModel) cb_historial.getModel();
+                modelo.addElement("Un usuario presto un libro");
+                cb_historial.setModel(modelo);
+            } else {
+                JOptionPane.showMessageDialog(this, "Seleccione un amigo y un Libro");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Ocurrio un erro y no se ingresaron los datos");
         }
 
     }//GEN-LAST:event_jb_prestar_libroMouseClicked
@@ -1134,6 +1241,29 @@ public class Biblioteca_Virtual extends javax.swing.JFrame {
         }
         cb_devolver_libros.setModel(modelo2);
     }//GEN-LAST:event_jPanel2MouseClicked
+
+    private void jb_modificar_LibrosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_modificar_LibrosMouseClicked
+        seleccion_modi = (Libro) cb_modificar.getSelectedItem();
+        Ventana_Modificar.setModal(true);
+        Ventana_Modificar.pack();
+        Ventana_Modificar.setLocationRelativeTo(this);
+        Ventana_Modificar.setVisible(true);
+
+    }//GEN-LAST:event_jb_modificar_LibrosMouseClicked
+
+    private void jb_eliminar_librosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_eliminar_librosMouseClicked
+        Libro seleccion = (Libro) cb_eliminar.getSelectedItem();
+        lista_libros_Principal.remove(seleccion);
+        JOptionPane.showMessageDialog(this, "Se elimino el libro exitosamente");
+    }//GEN-LAST:event_jb_eliminar_librosMouseClicked
+
+    private void rb_autorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rb_autorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rb_autorActionPerformed
+
+    private void rb_publicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rb_publicActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rb_publicActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -1170,10 +1300,14 @@ public class Biblioteca_Virtual extends javax.swing.JFrame {
     ArrayList<Libro> lista_libros_Principal = new ArrayList();
     ArrayList<Usuario> lista_usuarios = new ArrayList();
     Usuario usuario_ingresado;
+    Libro seleccion_modi;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDialog Menu_admin;
     private javax.swing.JDialog Menu_usuario;
+    private javax.swing.JDialog Ventana_Modificar;
+    private javax.swing.ButtonGroup bg_modificar;
     private javax.swing.JComboBox<String> cb_devolver_libros;
+    private javax.swing.JComboBox<String> cb_eliminar;
     private javax.swing.JComboBox<String> cb_genero;
     private javax.swing.JComboBox<String> cb_genero_libros;
     private javax.swing.JComboBox<String> cb_historial;
@@ -1184,6 +1318,7 @@ public class Biblioteca_Virtual extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cb_lista_libros_genFav;
     private javax.swing.JComboBox<String> cb_lista_solicitudes;
     private javax.swing.JComboBox<String> cb_lista_usuarios_amigos;
+    private javax.swing.JComboBox<String> cb_modificar;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -1201,6 +1336,7 @@ public class Biblioteca_Virtual extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1220,8 +1356,6 @@ public class Biblioteca_Virtual extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
@@ -1234,6 +1368,7 @@ public class Biblioteca_Virtual extends javax.swing.JFrame {
     private javax.swing.JButton jb_eliminar_libros;
     private javax.swing.JButton jb_enviar_solicitud;
     private javax.swing.JButton jb_log_in;
+    private javax.swing.JButton jb_modi_ele;
     private javax.swing.JButton jb_modificar_Libros;
     private javax.swing.JButton jb_prestar_libro;
     private javax.swing.JButton jb_rechazar_solicitud;
@@ -1241,11 +1376,18 @@ public class Biblioteca_Virtual extends javax.swing.JFrame {
     private javax.swing.JButton jb_sign_up;
     private com.toedter.calendar.JDateChooser jd_fecha_nacimiento;
     private com.toedter.calendar.JDateChooser jd_publicacion;
+    private javax.swing.JRadioButton rb_autor;
+    private javax.swing.JRadioButton rb_copias;
+    private javax.swing.JRadioButton rb_desc;
+    private javax.swing.JRadioButton rb_edicion;
+    private javax.swing.JRadioButton rb_genero;
+    private javax.swing.JRadioButton rb_public;
+    private javax.swing.JRadioButton rb_puntaje;
+    private javax.swing.JRadioButton rb_titulo;
+    private javax.swing.JRadioButton rb_valor;
     private javax.swing.JSpinner sp_copias;
     private javax.swing.JSpinner sp_puntaje;
     private javax.swing.JTextArea ta_descripcion;
-    private javax.swing.JTable table_libros_eliminar;
-    private javax.swing.JTable table_libros_modificar;
     private javax.swing.JTextField tf_correo;
     private javax.swing.JTextField tf_edicion;
     private javax.swing.JTextField tf_nombre;
