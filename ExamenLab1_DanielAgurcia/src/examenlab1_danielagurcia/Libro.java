@@ -101,6 +101,10 @@ public class Libro {
         this.anio_publicacion = anio_publicacion;
     }
 
+    public String toString2() {
+        return "Titulo: " + titulo + "\nDescripcion: " + descripcion + "\nPuntaje: " + puntaje + "\nCopias disponibles: " + copias_disponibles + "\nGenero: " + Genero + "\nValor: " + valor + "\nEdicion: " + edicion + "\nAutor: " + autor + "\nAno de publicacion: " + anio_publicacion;
+    }
+
     @Override
     public String toString() {
         return titulo;

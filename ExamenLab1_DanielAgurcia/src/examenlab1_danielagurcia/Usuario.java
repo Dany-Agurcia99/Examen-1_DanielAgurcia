@@ -12,7 +12,7 @@ public class Usuario {
     int numero_telefonico;
     String correo_electronico;
     String genero_fav;
-    ArrayList<Libro> libros_genero_fav = new ArrayList();
+    ArrayList<Libro> libros_usuario = new ArrayList();
     ArrayList<Usuario> lista_amigos = new ArrayList();
 
     public Usuario() {
@@ -92,12 +92,12 @@ public class Usuario {
         this.genero_fav = genero_fav;
     }
 
-    public ArrayList<Libro> getLibros_genero_fav() {
-        return libros_genero_fav;
+    public ArrayList<Libro> getLibros_usuario() {
+        return libros_usuario;
     }
 
-    public void setLibros_genero_fav(ArrayList<Libro> libros_genero_fav) {
-        this.libros_genero_fav = libros_genero_fav;
+    public void setLibros_genero_fav(ArrayList<Libro> libros_usuario) {
+        this.libros_usuario = libros_usuario;
     }
 
     @Override
