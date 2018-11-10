@@ -800,6 +800,11 @@ public class Biblioteca_Virtual extends javax.swing.JFrame {
         jLabel22.setText("Seleccione lo que quiere modificar");
 
         jb_modi_ele.setText("Modificar Elemento");
+        jb_modi_ele.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_modi_eleMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout Ventana_ModificarLayout = new javax.swing.GroupLayout(Ventana_Modificar.getContentPane());
         Ventana_Modificar.getContentPane().setLayout(Ventana_ModificarLayout);
@@ -995,8 +1000,8 @@ public class Biblioteca_Virtual extends javax.swing.JFrame {
             modelo.addElement(nuevoUsuario);
             cb_lista_usuarios_amigos.setModel(modelo);
             tf_nombre.setText("");
-            tf_username.setText("");
-            tf_password.setText("");
+            tf_username_sign.setText("");
+            tf_password_sign.setText("");
             jd_fecha_nacimiento.setDate(new Date());
             tf_numeroTel.setText("");
             tf_correo.setText("");
@@ -1264,6 +1269,50 @@ public class Biblioteca_Virtual extends javax.swing.JFrame {
     private void rb_publicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rb_publicActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_rb_publicActionPerformed
+
+    private void jb_modi_eleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_modi_eleMouseClicked
+        if (rb_titulo.isSelected()) {
+            String newtitulo = JOptionPane.showInputDialog(this, "Ingrese el nuevo titulo");
+            seleccion_modi.setTitulo(newtitulo);
+            JOptionPane.showMessageDialog(this, "Se modifico el titulo exitosamente");
+        } else if (rb_autor.isSelected()) {
+            String newautor = JOptionPane.showInputDialog(this, "Ingrese el nuevo nombre del autor");
+            seleccion_modi.setAutor(newautor);
+            JOptionPane.showMessageDialog(this, "Se modifico el autor exitosamente");
+        } else if (rb_puntaje.isSelected()) {
+            String newpuntajeS = JOptionPane.showInputDialog(this, "Ingrese el nuevo puntaje");
+            int newpuntaje = Integer.parseInt(newpuntajeS);
+            if (newpuntaje <= 0 || newpuntaje > 5) {
+                JOptionPane.showMessageDialog(this, "no puede ser menor de 0 ni mayor a 5");
+                newpuntajeS = JOptionPane.showInputDialog(this, "Ingrese el nuevo puntaje");
+                newpuntaje = Integer.parseInt(newpuntajeS);
+            }
+            seleccion_modi.setPuntaje(newpuntaje);
+            JOptionPane.showMessageDialog(this, "Se modifico el puntaje exitosamente");
+        } else if (rb_public.isSelected()) {
+            String newfecha = JOptionPane.showInputDialog(this, "Ingrese la nueva fecha");
+            seleccion_modi.setAnio_publicacion(new Date());
+            JOptionPane.showMessageDialog(this, "Se modifico la fecha exitosamente");
+        } else if (rb_genero.isSelected()) {
+            String newgenero = JOptionPane.showInputDialog(this, "Ingrese el nuevo genero del libro\n1)Fantasia\n2)Romance\n3)Accion\n4)Historia");
+            seleccion_modi.setGenero(newgenero);
+            JOptionPane.showMessageDialog(this, "Se modifico el genero exitosamente");
+        } else if (rb_edicion.isSelected()) {
+            String newedicionS = JOptionPane.showInputDialog(this, "Ingrese la nuevo edicion");
+            int newedicion = Integer.parseInt(newedicionS);
+            seleccion_modi.setEdicion(newedicion);
+            JOptionPane.showMessageDialog(this, "Se modifico la Edicion exitosamente");
+        } else if (rb_desc.isSelected()) {
+            String newdesc = JOptionPane.showInputDialog(this, "Ingrese la nueva descripcion del libro");
+            seleccion_modi.setDescripcion(newdesc);
+            JOptionPane.showMessageDialog(this, "Se modifico la descripcion exitosamente");
+        } else if (rb_copias.isSelected()) {
+            String newcopiasS = JOptionPane.showInputDialog(this, "Ingrese las nuevas copias");
+            int newcopias = Integer.parseInt(newcopiasS);
+            seleccion_modi.setCopias_disponibles(newcopias);
+            JOptionPane.showMessageDialog(this, "Se modifico las copias exitosamente");
+        }
+    }//GEN-LAST:event_jb_modi_eleMouseClicked
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
